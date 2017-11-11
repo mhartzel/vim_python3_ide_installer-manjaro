@@ -67,10 +67,13 @@ echo "- Download and install 256 color capable urxvt terminal emulator and set i
 echo "- Install vim plugins Pathogen and Tagbar plugins to make vim a Python3 IDE."
 echo "- Remove most color schemes that comes with vim, leaving only: default, desert, murphy and slate."
 echo "- Install 256 color vim color schemes: desert256, distinguished, jellybeans."
-echo "- Sets colorscheme desert256 as default."
+echo "- Sets colorscheme aldmeris as default."
 echo
-echo "Note: Manjaro pacman will ask you questions when installing packages."
-echo "Mostly you will want to answer 'yes', but this depends on your system configuration.'"
+echo "########################################################################################"
+echo "# Note: Manjaro pacman will ask you questions when installing packages.                #"
+echo "# Mostly you will want to answer 'yes', but this depends on your system configuration. #"
+echo "########################################################################################"
+echo
 echo
 echo "If you don't want this then press ctrl + c now."
 echo
@@ -102,7 +105,7 @@ if [ "$?" != "0" ] ; then echo "Error trying to install vim dependencies" ; exit
 # Compile and install vim.
 NUMBER_OF_CORES=`cat /proc/cpuinfo | grep -i processor | grep ': [0-9][0-9][0-9]\|[0-9][0-9]\|[0-9]' | wc -l`
 echo
-echo "Compiling and installing vim..."
+echo "Cloning Vim git repository..."
 echo "--------------------------------------------------------------------------------"
 cd $HOME_DIRECTORY
 rm -rf vim
@@ -112,6 +115,9 @@ cd vim
 git pull
 cd src
 ./configure --with-features=normal --enable-python3interp --enable-multibyte --disable-gui --prefix=/usr
+echo
+echo "Compiling Vim using "$NUMBER_OF_CORES" processor cores..."
+echo "--------------------------------------------------------------------------------"
 make -j$NUMBER_OF_CORES
 if [ "$?" != "0" ] ; then echo "Error compiling vim" ; exit ; fi
 make install
