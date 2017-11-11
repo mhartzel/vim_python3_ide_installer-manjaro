@@ -90,11 +90,11 @@ Toggle Tagbar on/off with F8
 
 
 ## Python3 and C syntax checking
-![Desert256](Pictures/desert256-Syntastic-Pyflakes.png)
+![aldmeris](Pictures/aldmeris-Syntastic-Pyflakes.png)
 
 
 ## Complete keywords by pressing Tab
-![Desert256](Pictures/desert256-Supertab.png)
+![aldmeris](Pictures/aldmeris-Supertab.png)
 
 
 ## View documentation for the keyword under cursor
@@ -106,7 +106,7 @@ Python3: leader + pw ( \pw )
 C: leader + cr ( \cr )
 ```
 
-![Desert256](Pictures/desert256-Supertab-Pydocs.png)
+![aldmeris](Pictures/aldmeris-Supertab-Pydocs.png)
 
 # Colorschemes
 
