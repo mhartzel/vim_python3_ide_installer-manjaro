@@ -77,14 +77,14 @@ Toggle line numbers on/off with F2
 Toggle indent guides on/off with F3
 ```
 
-![Desert256](Pictures/Line_numbers-indent_guides.png)
+![aldmeris](Pictures/Line_numbers-indent_guides.png)
 
 
 ## Tagbar shows the current 'scope' and lets jump to function and variable definitions
 ```ruby
 Toggle Tagbar on/off with F8
 ```
-![Desert256](Pictures/tagbar.png)
+![aldmeris](Pictures/tagbar.png)
 
 
 ## Python3 and C syntax checking
