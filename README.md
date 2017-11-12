@@ -77,7 +77,7 @@ Toggle line numbers on/off with F2
 Toggle indent guides on/off with F3
 ```
 
-![aldmeris](Pictures/Line_numbers-indent_guides.png)
+![aldmeris](https://raw.githubusercontent.com/mhartzel/vim_python3_ide_installer-manjaro/master/Pictures/Line_numbers-indent_guides.png)
 
 
 ## Tagbar shows the current 'scope' and lets jump to function and variable definitions
