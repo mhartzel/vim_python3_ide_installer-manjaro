@@ -567,9 +567,8 @@ URxvt*saveLines:         65535
 URxvt*font: xft:xos4 Terminus:pixelsize=14:encoding=combined
 
 ! Configure urxvt to always open in tabbed mode and to use a clipboard
-URxvt.keysym.Shift-Control-V: perl:clipboard:paste
 URxvt.iso14755: False
-URxvt.perl-ext-common: default,clipboard,tabbed
+URxvt.perl-ext-common: default,tabbed
 
 ! Colors for urxvt
 URxvt*foreground: Wheat
