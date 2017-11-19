@@ -56,9 +56,7 @@ if [ ! -e "$PATH_TO_SCRIPT_DIR/" ] ; then
         exit
 fi
 
-
-
-# Start intallation
+# Start installation
 echo
 echo "This program will do the following things:"
 echo
@@ -89,6 +87,7 @@ echo "--------------------------------------------------------------------------
 # Get a list of vim packages currently installed and remove them all
 declare -a VIM_PACKAGES_INSTALLED
 VIM_PACKAGES_INSTALLED=`pacman -Qsq vim`
+VIM_PACKAGES_INSTALLED+=(`pacman -Qsq vi | grep '^vi$'`) # Also uninstall package: vi
 
 echo "Uninstalling vim packages: "${VIM_PACKAGES_INSTALLED[@]}
 
@@ -116,12 +115,13 @@ echo "Cloning Vim git repository..."
 echo "--------------------------------------------------------------------------------"
 cd $HOME_DIRECTORY
 rm -rf vim
+# git clone --depth 1 https://github.com/vim/vim.git # This alternative command only clones the latest commit from the repo resulting in faster download.
 git clone https://github.com/vim/vim.git
 if [ "$?" != "0" ] ; then echo "Error downloading vim source from git repository" ; exit ; fi
 cd vim
 git pull
 cd src
-./configure --with-features=normal --enable-python3interp --enable-multibyte --disable-gui --prefix=/usr
+./configure --with-features=normal --enable-pythoninterp --enable-python3interp --enable-multibyte --disable-gui --prefix=/usr
 echo
 echo "Compiling Vim using "$NUMBER_OF_CORES" processor cores..."
 echo "--------------------------------------------------------------------------------"
