@@ -442,6 +442,10 @@ autocmd BufReadPost *
 " Remember info about open buffers on close
 set viminfo^=%
 
+" Set the pydoc info window to 50% size of vim window.
+" Pydoc shows docs for python words under cursor with \pw.
+let g:pydoc_window_lines=0.5
+
 " Display line numbers when F2 is pressed
 nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
 
