@@ -85,7 +85,14 @@ echo
 # Remove previous vim installations and install dependencies
 echo "Removing vim packages..."
 echo "--------------------------------------------------------------------------------"
-pacman -R vim vim-runtime
+
+# Get a list of vim packages currently installed and remove them all
+declare -a VIM_PACKAGES_INSTALLED
+VIM_PACKAGES_INSTALLED=`pacman -Qsq vim`
+
+echo "Uninstalling vim packages: "${VIM_PACKAGES_INSTALLED[@]}
+
+pacman -R ${VIM_PACKAGES_INSTALLED[@]}
 VIM_PATH=`which vim`
 if [ -e "$VIM_PATH" ] ; then rm -rf "$VIM_PATH" ; fi
 echo
@@ -278,6 +285,58 @@ chown -R $REAL_USER_NAME:$REAL_USER_NAME .vim/
 
 
 
+# vim-fugitive
+echo
+echo "Installing Vim-Fugitive"
+echo "--------------------------------------------------------------------------------"
+cd $HOME_DIRECTORY
+cd .vim/bundle
+git clone https://github.com/tpope/vim-fugitive.git
+if [ "$?" != "0" ] ; then echo "Error trying to download Vim-Fugitive" ; exit ; fi
+cd $HOME_DIRECTORY
+chown -R $REAL_USER_NAME:$REAL_USER_NAME .vim/
+
+
+
+# GitGutter
+echo
+echo "Installing GitGutter"
+echo "--------------------------------------------------------------------------------"
+cd $HOME_DIRECTORY
+cd .vim/bundle
+git clone git://github.com/airblade/vim-gitgutter.git
+if [ "$?" != "0" ] ; then echo "Error trying to download GitGutter" ; exit ; fi
+cd $HOME_DIRECTORY
+chown -R $REAL_USER_NAME:$REAL_USER_NAME .vim/
+
+
+
+# Nerdtree
+echo
+echo "Installing Nerdtree"
+echo "--------------------------------------------------------------------------------"
+cd $HOME_DIRECTORY
+cd .vim/bundle
+git clone https://github.com/scrooloose/nerdtree.git
+if [ "$?" != "0" ] ; then echo "Error trying to download Nerdtree" ; exit ; fi
+cd $HOME_DIRECTORY
+chown -R $REAL_USER_NAME:$REAL_USER_NAME .vim/
+
+
+
+# Surround
+echo
+echo "Installing Surround"
+echo "--------------------------------------------------------------------------------"
+cd $HOME_DIRECTORY
+cd .vim/bundle
+git clone https://github.com/tpope/vim-surround
+if [ "$?" != "0" ] ; then echo "Error trying to download Surround" ; exit ; fi
+cd $HOME_DIRECTORY
+chown -R $REAL_USER_NAME:$REAL_USER_NAME .vim/
+
+
+
 # Remove bad looking color schemes that ship with vim
 echo
 echo "Deleting bad color schemes that ship with vim..."
@@ -398,8 +457,16 @@ set pastetoggle=<f5>
 " Go to next window when pressing F6
 map <F6> <C-W>w
 
+" Open NERDTree window by pressing F7
+noremap <F7> :NERDTree<CR>
+
 " Open Tagbar plugin window when F8 is pressed
 nmap <F8> :TagbarToggle<CR>
+
+" Toggle GitGutter display by pressing F9
+" First turn it off by default
+let g:gitgutter_enabled = 0                                                                                                                                                                                       
+noremap <F9> :GitGutterToggle<CR>
 
 " Set characer set encoding to UTF-8
 set encoding=utf-8
