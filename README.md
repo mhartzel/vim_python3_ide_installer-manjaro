@@ -49,7 +49,7 @@ After installation you have:
 - Tagbar also shows you the 'scope' meaning it highlights the function name the current code line belongs to.
 - Pressing enter in Tagbar window on a function name makes the main window jump to that function.
 - Matching brackets are automatically highlighted.
-- Vim-Gitgutter shows what lines you have changes since committing that file to git (display refreshes every 4 seconds)
+- Vim-Gitgutter shows what lines you have changed since committing that file to git (display refreshes every 4 seconds)
 - Nerdtree lets you navigate the filesystem and open files.
 - Git-fugitive lets you commit to your git repository right from vim.
 - Surround lets you easily add change quotes, brakets, etc around a text block: https://github.com/tpope/vim-surround
@@ -95,17 +95,21 @@ Toggle indent guides on/off with F3
 Toggle Tagbar on/off with F8
 ```
 > http://github.com/majutsushi/tagbar
+
 ![aldmeris](https://raw.githubusercontent.com/mhartzel/vim_python3_ide_installer-manjaro/master/Pictures/tagbar.png)
 
 
 ## Python3 and C syntax checking
 > https://github.com/vim-syntastic/syntastic
+
 > https://github.com/pyflakes/pyflakes.git
+
 ![aldmeris](https://raw.githubusercontent.com/mhartzel/vim_python3_ide_installer-manjaro/master/Pictures/aldmeris-Syntastic-Pyflakes.png)
 
 
 ## Complete keywords by pressing Tab
 > https://github.com/ervandew/supertab.git
+
 ![aldmeris](https://raw.githubusercontent.com/mhartzel/vim_python3_ide_installer-manjaro/master/Pictures/aldmeris-Supertab.png)
 
 
@@ -118,6 +122,7 @@ Python3: leader + pw ( \pw )
 C: leader + cr ( \cr )
 ```
 > https://github.com/fs111/pydoc.vim.git
+
 ![aldmeris](https://raw.githubusercontent.com/mhartzel/vim_python3_ide_installer-manjaro/master/Pictures/aldmeris-Supertab-Pydocs.png)
 
 
@@ -126,6 +131,7 @@ C: leader + cr ( \cr )
 Toggle Gitgutter on/off with F9
 ```
 > https://github.com/airblade/vim-gitgutter
+
 ![aldmeris](https://raw.githubusercontent.com/mhartzel/vim_python3_ide_installer-manjaro/master/Pictures/aldmeris-256-gitgutter.png)
 
 
@@ -134,6 +140,7 @@ Toggle Gitgutter on/off with F9
 Open Nerdtree with F7 and close with q
 ```
 > https://github.com/scrooloose/nerdtree
+
 ![aldmeris](https://raw.githubusercontent.com/mhartzel/vim_python3_ide_installer-manjaro/master/Pictures/aldmeris-nerdtree.png)
 
 
@@ -144,6 +151,7 @@ Gstatus or Gst = git status
 Gcommit or Gco = git commit
 ```
 > https://github.com/tpope/vim-fugitive
+
 ![aldmeris](https://raw.githubusercontent.com/mhartzel/vim_python3_ide_installer-manjaro/master/Pictures/aldmeris-git-fugitive.png)
 
 
