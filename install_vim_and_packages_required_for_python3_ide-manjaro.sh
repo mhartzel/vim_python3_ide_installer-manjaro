@@ -103,7 +103,7 @@ rm -rf "$REAL_USER_NAME/vim*"
 echo
 echo "Installing dependencies ..."
 echo "--------------------------------------------------------------------------------"
-pacman -S --needed base-devel devtools git python3 ncurses rxvt-unicode terminus-font xclip
+pacman -S --needed base-devel devtools git python3 ncurses rxvt-unicode terminus-font xclip unzip --ignore pkg-config
 if [ "$?" != "0" ] ; then echo "Error trying to install vim dependencies" ; exit ; fi
 
 
