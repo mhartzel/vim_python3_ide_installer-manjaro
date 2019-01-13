@@ -103,6 +103,10 @@ rm -rf "$REAL_USER_NAME/vim*"
 echo
 echo "Installing dependencies ..."
 echo "--------------------------------------------------------------------------------"
+echo
+echo "If you are asked to install pkg-config answer NO,"
+echo "pkg-config is deprecated and conflicts with package pkgconf that we need."
+echo
 pacman -S --needed base-devel devtools git python3 ncurses rxvt-unicode terminus-font xclip unzip --ignore pkg-config
 if [ "$?" != "0" ] ; then echo "Error trying to install vim dependencies" ; exit ; fi
 
@@ -425,6 +429,9 @@ set novisualbell
 set t_vb=
 set tm=500
 
+" ctrl + a and ctrl + x increments character / number under cursor
+set nrformats=alpha
+
 " Turn backup off, since most stuff is in SVN, git et.c anyway...
 set nobackup
 set noswapfile
@@ -506,6 +513,9 @@ let g:syntastic_auto_loc_list = 1
 
 " Configure Syntastic to use pyflakes for Python syntax checking
 let g:syntastic_python_checkers = ["pyflakes"] 
+
+" Configure Syntastic Go syntax checker
+let g:syntastic_go_checkers = ["gotype"] 
 
 " Configure Supertab to complete python3 commands when pressing TAB and showing description of commands in a window.
 au FileType python set omnifunc=python3complete#Complete
