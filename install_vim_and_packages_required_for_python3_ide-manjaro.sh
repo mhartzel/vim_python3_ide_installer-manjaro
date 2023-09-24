@@ -107,7 +107,7 @@ echo
 echo "If you are asked to install pkg-config answer NO,"
 echo "pkg-config is deprecated and conflicts with package pkgconf that we need."
 echo
-pacman -S --needed base-devel git python3 ncurses rxvt-unicode terminus-font xclip unzip --ignore pkg-config
+pacman -S --needed base-devel manjaro-tools-base git python3 ncurses rxvt-unicode terminus-font xclip unzip --ignore pkg-config
 if [ "$?" != "0" ] ; then echo "Error trying to install vim dependencies" ; exit ; fi
 
 
@@ -464,11 +464,15 @@ set pastetoggle=<f5>
 " Go to next window when pressing F6
 map <F6> <C-W>w
 
-" Open NERDTree window by pressing F7
-noremap <F7> :NERDTree<CR>
+" Toggle NERDTree window by pressing F7
+noremap <F7> ::NERDTreeToggle<CR>
 
 " Open Tagbar plugin window when F8 is pressed
 nmap <F8> :TagbarToggle<CR>
+
+" Open tag under cursor to a new vertical window
+set splitright
+nnoremap <F10> :only<bar>vsplit<CR>:execute "tag " . expand('<cword>')<CR>
 
 " Toggle GitGutter display by pressing F9
 " First turn it off by default
