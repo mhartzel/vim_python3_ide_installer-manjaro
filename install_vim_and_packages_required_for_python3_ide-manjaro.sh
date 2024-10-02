@@ -107,7 +107,7 @@ echo
 echo "If you are asked to install pkg-config answer NO,"
 echo "pkg-config is deprecated and conflicts with package pkgconf that we need."
 echo
-pacman -S --needed base-devel manjaro-tools-base git python3 ncurses terminus-font unzip --ignore pkg-config
+pacman -S --needed base-devel manjaro-tools-base git python3 ncurses terminus-font unzip python-setuptools --ignore pkg-config
 if [ "$?" != "0" ] ; then echo "Error trying to install vim dependencies" ; exit ; fi
 
 
