@@ -107,7 +107,7 @@ echo
 echo "If you are asked to install pkg-config answer NO,"
 echo "pkg-config is deprecated and conflicts with package pkgconf that we need."
 echo
-pacman -S --needed base-devel manjaro-tools-base git python3 ncurses terminus-font unzip python-setuptools --ignore pkg-config
+pacman -S --needed base-devel manjaro-tools-base git python3 ncurses terminus-font unzip python-setuptools python-pyflakes --ignore pkg-config
 if [ "$?" != "0" ] ; then echo "Error trying to install vim dependencies" ; exit ; fi
 
 
@@ -185,20 +185,6 @@ make
 make install
 cd ..
 rm -rf ctags
-
-
-
-# Install Pyflakes
-echo
-echo "Installing Pyflakes ..."
-echo "--------------------------------------------------------------------------------"
-cd $HOME_DIRECTORY
-git clone https://github.com/pyflakes/pyflakes.git
-if [ "$?" != "0" ] ; then echo "Error trying to download Pyflakes" ; exit ; fi
-cd pyflakes
-/usr/bin/env python3 $HOME_DIRECTORY/pyflakes/setup.py install
-cd ..
-rm -rf pyflakes
 
 
 
