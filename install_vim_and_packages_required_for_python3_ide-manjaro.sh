@@ -107,7 +107,7 @@ echo
 echo "If you are asked to install pkg-config answer NO,"
 echo "pkg-config is deprecated and conflicts with package pkgconf that we need."
 echo
-pacman -S --needed base-devel manjaro-tools-base git python3 ncurses terminus-font unzip python-setuptools python-pyflakes --ignore pkg-config
+pacman -S --needed base-devel manjaro-tools-base git python3 ncurses terminus-font unzip python-setuptools python-pyflakes ctags --ignore pkg-config
 if [ "$?" != "0" ] ; then echo "Error trying to install vim dependencies" ; exit ; fi
 
 
@@ -168,23 +168,6 @@ do
 	cat $NEW_PATH | grep -Ev 'expandtab' | grep -Ev 'shiftwidth' | grep -Ev 'softtabstop' | grep -Ev 'tabstop' > $OLD_PATH
 done
 
-
-
-
-# Universal Ctags compilation is needed for tagbar.
-echo
-echo "Compiling and installing Universal Ctags (requirement of Tagbar) ..."
-echo "--------------------------------------------------------------------------------"
-cd $HOME_DIRECTORY
-git clone https://github.com/universal-ctags/ctags.git
-if [ "$?" != "0" ] ; then echo "Error trying to download Universal Ctags" ; exit ; fi
-cd ctags
-./autogen.sh
-./configure
-make
-make install
-cd ..
-rm -rf ctags
 
 
 
